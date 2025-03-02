@@ -4,6 +4,6 @@ import covy.orderservice.entity.OrderEntity;
 import org.springframework.data.repository.CrudRepository;
 
 public interface OrderRepository extends CrudRepository<OrderEntity, Long> {
-    OrderEntity findBtOrderId(String orderId);
+    OrderEntity findByOrderId(String orderId);
     Iterable<OrderEntity> findByUserId(String userId);
 }

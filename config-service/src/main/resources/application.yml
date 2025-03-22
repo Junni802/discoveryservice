@@ -1,0 +1,16 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-service
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file://
+        git:
+          uri: https://github.com/Junni802/spring-cloud-config.git
+#          uri: file:///Applications/git-local-repo

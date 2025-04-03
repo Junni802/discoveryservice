@@ -42,4 +42,4 @@ greeting:
 
 logging:
   level:
-    covy.orderservice: DEBUG
+    org.springframework.web: DEBUG

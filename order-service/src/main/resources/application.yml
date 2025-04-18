@@ -2,10 +2,26 @@ spring:
   application:
     name: order-service
 
+  management:
+    tracing:
+      sampling:
+        probability: 1.0
+      propagation:
+        consume: b3
+        produce: b3_multi
+    zipkin:
+      tracing:
+        endpoint: "http://127.0.0.1:9411/api/v2/spans"
+
   datasource:
-    url: jdbc:h2:mem:test
-    driver-class-name: org.h2.Driver
-    username: sa
+    url: jdbc:mariadb://localhost:3306/mydb
+    driver-class-name: org.mariadb.jdbc.Driver
+    hikari:
+      username: root
+      password: test1357
+  #    url: jdbc:h2:mem:test
+#    driver-class-name: org.h2.Driver
+#    username: sa
 
   h2:
     console:
@@ -43,3 +59,10 @@ greeting:
 logging:
   level:
     org.springframework.web: DEBUG
+
+management:
+  endpoint:
+  endpoints:
+    web:
+      exposure:
+        include: health, httptrace, info, metrics, prometheus

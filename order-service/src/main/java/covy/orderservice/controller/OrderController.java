@@ -61,7 +61,7 @@ public class OrderController {
 
         /* send this order */
         kafkaProducer.send("example-catalog-topic", orderDto);
-        orderProducer.send("orders", orderDto);
+//        orderProducer.send("orders", orderDto);
 
         ResponseOrder responseOrder = mapper.map(orderDto, ResponseOrder.class);
 

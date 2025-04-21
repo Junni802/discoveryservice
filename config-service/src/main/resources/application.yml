@@ -19,6 +19,8 @@ spring:
           search-locations: file://${user.home}/native-file-repo
         git:
           uri: https://github.com/Junni802/spring-cloud-config
+#          username: [username]
+#          password: [password]
 #          uri: file:///Applications/git-local-repo
 
 management:
